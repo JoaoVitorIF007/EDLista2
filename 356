@@ -1,0 +1,55 @@
+import java.util.Scanner;
+public class Atv356 {
+
+   public static void main(String[] args) { 
+    int L = 0;     //Iniciando variaveis val int
+    int c = 1;
+    int t;
+
+    try (Scanner sc = new Scanner(System.in)) {
+        double[] media = new double[15]; 
+        double[] pr1 = new double[15]; //PROVA 1 E 2 VALOR DOUBLE
+        double[] pr2 = new double[15];
+        
+        String[] nomes = new String[15]; 
+        String[] sit = new String[15];
+//Alunos
+        do {
+        System.out.print("\n Digite " + (L+1)+ " nome:");  
+        nomes[L] = sc.next();
+            while ((nomes[L].length()) > 30) {
+            System.out.println("Nomes com até 30 caracteres");
+            System.out.println("\n Digite" + (L+1) + " nome:");
+            nomes[L] = sc.next();
+            }
+// Limite de caracteres (NOME)
+         t = 30 - nomes[L].length();
+// Fazendo a média
+        do {
+            {nomes[L] = nomes[L].concat(" ");} 
+            c++;
+        } while (c <= t);
+         System.out.println("Digite a primeira nota: ");
+                pr1[L] =  sc.nextDouble();
+         System.out.println("Digite a segunda nota: ");
+                pr2[L] = sc.nextDouble();
+         media[L] = (int)((pr1[L] + pr2[L])/2);
+        
+        System.out.println(media[L]);
+        if (media[L] > 5) {
+            sit[L] = "AP";
+        } else {
+            sit[L] = "RP"; 
+        }
+             
+        L++;
+        } while (L<= 1);
+
+         System.out.println("RELAÇÃO FINAL\n");
+            for ( L = 0; L <= 1; L++) {
+                System.out.println((L + 1) + "- "+ nomes[L] +"\n"+ "\t" + pr1[L] + "\t" + pr2[L] + "\t" + media[L] + "\t" + sit[L]);
+            }
+    }
+
+    }
+}
