@@ -1,0 +1,39 @@
+package EDAula2;
+
+import java.util.Scanner;
+
+public class Atv412 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[][] n = new int[5][5]; // VETOR INTEIRO N
+        int  l, c, t; // DEFININDO INTEIROS L C T
+    for ( l = 0; l < 5 ;l++) { // L RECEBE 0, L MENOR QUE 5, INCREMENTO
+        for ( c = 0; c < 5;c++) { //C RECEBE 0, C MENOR QUE 5
+            System.out.println("Digite elemento: " + (l + 1) + " - " + (c + 1) + " : " );
+            n[l][c] = sc.nextInt();
+        }
+    }
+    System.out.println("Toda Matriz\n"); // PASSANDO MATRIZ QUE USU DIGITOU
+    for ( l = 0; l < 5; l++)  //LINHA E COLUNA EXERCICIO PEDIU REGRA IDENTICA
+    { //TANTO A LINHA E COLUNA INICIA EM 1-1 1-2... 5.5
+        for ( c = 0; c < 5; c++) {
+            System.out.print(n[l][c] + "\t");
+            System.out.println();
+        }    
+    } //PASSANDO PARA O USU OS ELEMENTOS NAS POSIÇÕES CUJA LINHA + COLUNA DÃO UM N PAR
+    System.out.println("So os elementos nas posicoes cuja linha + coluna dão um numero par" + "\n" );
+    for ( l = 0; l < 5; l++) {
+        for ( c = 0; c < 5; c++) {
+            System.out.print("\t");
+            if ((l + c) % 2 == 0) { //SE LINHA + COLUNA FOR DIVISIVEL POR 2 PASSAR PARA USUÁRIO N[L][C]
+                System.out.print(n[l][c]);
+            }
+            System.out.print("\t");
+        System.out.println();
+        }
+       
+    }
+    sc.close();
+
+    }
+}
