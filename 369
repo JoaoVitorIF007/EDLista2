@@ -1,0 +1,59 @@
+package EDAula2;
+
+import java.util.Scanner;
+public class Atv369 {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int lugares, codigo, lugmesa, a; //DEFININDO INTEIROS LUGARES, CODIGO, LUGMESA, A
+    int[] mesa = new int[30]; //VETORES
+    int[] qtde = new int[30]; //VETORES
+
+   for ( a = 0; a < 30; a++) { //DE 0 ATÉ 30
+       mesa[a] = 100 + a; 
+       qtde[a] = 5;
+   }
+   lugares = 150; //LUGARES AO TODO 150
+
+   System.out.println("Entre com codigo (100 - 129) ou O para terminar: ");
+   codigo = sc.nextInt();
+   
+   for (; codigo > 0 && lugares != 0;) { //CRIANDO LAÇO 
+      int i;
+       for (i = 0; codigo != mesa[i] && i < 29; i++) {
+       }
+
+       if (codigo == mesa[i]) { //SE CODIGO FOR IGUAL MESA PERGUNTAR
+           System.out.print("Quantidade de lugares a  reservar? ");
+           lugmesa = sc.nextInt();
+   
+           if (qtde[i] >= lugmesa) {
+             qtde[i] -= lugmesa;  //COMPARAÇÃO DE LUGARES SE DA PARA RESERVAR OU NÃO
+             lugares -= lugmesa;
+           } else { // SE NÃO 
+             System.out.println("Não há lugares para reservar.");
+             break;
+           }
+   
+         } else {
+           System.out.println("Código de mesa inválido.");
+           System.out.print("Entre com um codigo entre 100-129 ou 0 para desligar o programa: ");
+           codigo = sc.nextInt();
+         }
+   
+         if (lugares == 0) { //SE O LUGAR FOR IGUAL A 0 LOTAÇÃO ESGOTADA SE NÃO LUGARES VAGOS
+           System.out.println("Lotação esgotada.");
+         } else {
+           System.out.println("Lugares Vagos");
+           for (i = 0; i < 30; i++) {
+             if (qtde[i] != 0) { //PASSANDO DADOS USU
+               System.out.println("Mesa: " + mesa[i] + "\t" + "Total d101e Lugares:" + qtde[i]);
+             }
+           }
+         }
+       }
+       
+     
+
+
+   }
+}
