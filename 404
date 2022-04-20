@@ -1,0 +1,30 @@
+package EDAula2;
+
+import java.util.Scanner;
+public class Atv404 {
+
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+        int N[][]= new int[10][10]; // VETOR N TAMANHO 10 , 10
+        int L, c, t; // DEFININDO INTEIRO L C T 
+        for (L=0; L<=2; L++){ //LINHA DE 0 ATÉ  2
+        for (c=0; c<=2; c++){ //COLUNA DE 0 ATÉ 2 
+            System.out.println("Entre com o elemento linha "+ L+1 +" coluna "+ c+1);
+          N[L][c] = ler.nextInt(); 
+        }
+    }
+        
+        System.out.println("ACIMA DA DIAGONAL PRINCIPAL");
+        for(L=0; L<=8 ;L++){ // 0 ATÉ 8
+            for(c= L+1; c<= 9;c++){ //1 ATÉ 9 
+                System.out.println(N[L][c]);
+                System.out.println("");
+                for(t=0; t<=L;t++){ 
+                    System.out.println(t);
+                }
+            }        
+            
+        }
+    }
+    
+}
